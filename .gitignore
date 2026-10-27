@@ -1,0 +1,8 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor and local metadata
+.vscode/
+.idea/
+.atl/
