@@ -12,8 +12,12 @@
 
     <header class="hero-section" id="inicio">
         <div class="container nav-container">
-            <div class="logo">Apptastico</div>
-            <nav class="nav-links">
+            <a class="logo" href="#inicio" aria-label="Apptastico, ir al inicio">Apptastico</a>
+            <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                <span>Menú</span>
+            </button>
+            <nav class="nav-links" id="primary-navigation" aria-label="Navegación principal">
                 <a href="#inicio" class="active">Inicio</a>
                 <a href="#que-es">Los procesos</a>
                 <a href="#roles">Equipo TSP</a>
@@ -315,5 +319,6 @@
         </div>
     </footer>
 
+    <script src="./scripts/main.js" defer></script>
 </body>
 </html>
