@@ -791,3 +791,41 @@ img {
         min-width: 0;
     }
 }
+
+.skip-link {
+    position: fixed;
+    z-index: 1000;
+    top: 12px;
+    left: 12px;
+    padding: 10px 14px;
+    transform: translateY(-160%);
+    border-radius: 6px;
+    background: #ffffff;
+    color: #17354a;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #ffd166;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
