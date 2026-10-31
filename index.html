@@ -9,11 +9,16 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
     <header class="hero-section" id="inicio">
         <div class="container nav-container">
-            <div class="logo">Apptastico</div>
-            <nav class="nav-links">
+            <a class="logo" href="#inicio" aria-label="Apptastico, ir al inicio">Apptastico</a>
+            <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                <span>Menú</span>
+            </button>
+            <nav class="nav-links" id="primary-navigation" aria-label="Navegación principal">
                 <a href="#inicio" class="active">Inicio</a>
                 <a href="#que-es">Los procesos</a>
                 <a href="#roles">Equipo TSP</a>
@@ -44,6 +49,7 @@
         </div>
     </header>
 
+    <main id="contenido-principal" tabindex="-1">
     <section class="sponsors-bar">
         <div class="container sponsors-container">
             <i class="fa-brands fa-deviantart sponsor-icon"></i>
@@ -62,7 +68,7 @@
                 </div>
                 <h3>PSP: mejorar desde la práctica</h3>
                 <p>Es una guía para observar el trabajo individual: permite estimar, registrar tiempos, detectar errores temprano y aprender de los resultados de cada proyecto.</p>
-                <a href="#" class="btn btn-card">Descubrir PSP</a>
+                <a href="#niveles-psp" class="btn btn-card">Descubrir PSP</a>
             </div>
 
             <div class="feature-card">
@@ -71,7 +77,7 @@
                 </div>
                 <h3>TSP: avanzar como equipo</h3>
                 <p>Traslada las buenas prácticas individuales al trabajo colectivo para definir objetivos, repartir responsabilidades, anticipar riesgos y sostener un ritmo de entrega realista.</p>
-                <a href="#" class="btn btn-card">Descubrir TSP</a>
+                <a href="#roles" class="btn btn-card">Descubrir TSP</a>
             </div>
 
             <div class="feature-card">
@@ -80,7 +86,7 @@
                 </div>
                 <h3>Calidad desde el inicio</h3>
                 <p>Las mediciones y revisiones frecuentes permiten encontrar desvíos antes de que crezcan, reducir el retrabajo y entregar productos más sólidos.</p>
-                <a href="#" class="btn btn-card">Ver enfoque</a>
+                <a href="#pros-cons-psp" class="btn btn-card">Ver enfoque</a>
             </div>
         </div>
     </section>
@@ -97,7 +103,6 @@
                     </div>
                     <h3>Liderazgo y calidad</h3>
                     <p>Ayuda al equipo a mantener el rumbo, coordina el lanzamiento y promueve que las decisiones de diseño y código se revisen a tiempo.</p>
-                    <a href="#" class="btn btn-card">Conocer el rol</a>
                 </div>
 
                 <div class="feature-card role-box">
@@ -106,7 +111,6 @@
                     </div>
                     <h3>Planificación y métricas</h3>
                     <p>Reúne los datos del proyecto, observa el avance y actualiza las estimaciones cuando el trabajo real se aparta del plan.</p>
-                    <a href="#" class="btn btn-card">Conocer el rol</a>
                 </div>
 
                  <div class="feature-card role-box">
@@ -115,7 +119,6 @@
                     </div>
                     <h3>Soporte y herramientas</h3>
                     <p>Cuida la infraestructura, facilita las herramientas del equipo y mantiene ordenados los componentes y la configuración del producto.</p>
-                    <a href="#" class="btn btn-card">Conocer el rol</a>
                 </div>
             </div>
         </div>
@@ -128,16 +131,16 @@
             </h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="Fase 1 PSP/TSP">
+                    <img src="./images/fase%20PSSP%201.jpg" alt="Diagrama de etapas PSP: planeación, diseño, codificación, compilación, pruebas y postmortem." loading="lazy" decoding="async">
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="Fase 2 PSP/TSP">
+                    <img src="./images/ciclo%20de%20vida%20TSPjpg.jpg" alt="Diagrama de ciclos TSP con lanzamiento, estrategia, planeamiento, requisitos, proyecto, implementación, pruebas y postmortem." loading="lazy" decoding="async">
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=80" alt="Fase 3 PSP/TSP">
+                    <img src="./images/tsp-process-l.jpg" alt="Esquema de ciclos TSP con lanzamiento, estrategia, planificación, requisitos, diseño, implementación, pruebas y postmortem." loading="lazy" decoding="async">
                 </div>
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=500&q=80" alt="Fase 4 PSP/TSP">
+                    <img src="./images/tsp-organization-levels.png" alt="Diagrama de niveles PSP en el trabajo individual, TSP en el equipo y CMM en la organización." loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -243,28 +246,27 @@
                 
                 <div class="blog-post">
                     <div class="blog-img">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=200&q=80" alt="Blog 1">
+                        <img src="./images/fase%20PSSP%201.jpg" alt="Diagrama de fases PSP desde la planeación hasta el postmortem." loading="lazy" decoding="async">
                     </div>
                     <div class="blog-content">
                         <h3>Primeros pasos para trabajar con PSP</h3>
                         <p>Una mirada práctica para incorporar mediciones personales sin perder el ritmo de trabajo del equipo...</p>
-                        <a href="#" class="read-more">Continuar leyendo...</a>
+                        <a href="#niveles-psp" class="read-more">Ver ruta de niveles PSP</a>
                         <span class="post-date">21/10/2026 - 08:30 AM</span>
                     </div>
                 </div>
 
                 <div class="blog-post">
                     <div class="blog-img">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Blog 2">
+                        <img src="./images/tsp-process-l.jpg" alt="Diagrama de ciclos repetidos de planificación, implementación y revisión en TSP." loading="lazy" decoding="async">
                     </div>
                     <div class="blog-content">
                         <h3>El valor de revisar en equipo</h3>
                         <p>Cómo las conversaciones tempranas sobre diseño y código ayudan a reducir el retrabajo y la deuda técnica...</p>
-                        <a href="#" class="read-more">Continuar leyendo...</a>
+                        <a href="#pros-cons-tsp" class="read-more">Ver fortalezas y desafíos TSP</a>
                         <span class="post-date">19/10/2026 - 02:15 PM</span>
                     </div>
                 </div>
-                <a href="#" class="older-entries">Explorar publicaciones anteriores</a>
             </div>
 
              <div class="twitter-col">
@@ -273,47 +275,46 @@
                 </h2>
 
                 <div class="tweet">
-                    <p><strong>@SoftwareSEI:</strong> Cuando un equipo trabaja con objetivos claros y datos confiables, puede mejorar su ritmo sin sacrificar la calidad. <a href="#">#PSP</a> <a href="#">#TSP</a></p>
+                    <p><strong>@SoftwareSEI:</strong> Cuando un equipo trabaja con objetivos claros y datos confiables, puede mejorar su ritmo sin sacrificar la calidad. <a href="#niveles-psp">#PSP</a> <a href="#roles">#TSP</a></p>
                     <span class="tweet-date">21/10/2026 - 11:00 AM</span>
                 </div>
 
                 <div class="tweet">
-                    <p><strong>@SoftwareSEI:</strong> La calidad se construye en cada etapa: observar, aprender y ajustar es tan importante como programar. <a href="#">#SoftwareEngineering</a></p>
+                    <p><strong>@SoftwareSEI:</strong> La calidad se construye en cada etapa: observar, aprender y ajustar es tan importante como programar. <a href="#fases">#SoftwareEngineering</a></p>
                     <span class="tweet-date">20/10/2026 - 09:30 AM</span>
                 </div>
 
                 <div class="tweet">
-                    <p><strong>@SoftwareSEI:</strong> Ya está disponible una nueva guía sobre cómo combinar PSP y TSP con prácticas de entrega continua. <a href="#">#DevOps</a> <a href="#">#Quality</a></p>
+                    <p><strong>@SoftwareSEI:</strong> Ya está disponible una nueva guía sobre cómo combinar PSP y TSP con prácticas de entrega continua. <a href="#fases">#DevOps</a> <a href="#pros-cons-tsp">#Quality</a></p>
                     <span class="tweet-date">18/10/2026 - 04:15 PM</span>
                 </div>
 
-                <a href="#" class="twitter-follow">Seguir las novedades</a>
             </div>
 
         </div>
     </section>
 
+    </main>
+
     <footer class="main-footer">
         <div class="container footer-container">
             <div class="copyright">
-                © Sergio Rios · 2026
+                © Apptastico
             </div>
             <div class="social-links">
-                <a href="https://facebook.com" target="_blank" class="social-icon facebook" title="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                 </a>
-                <a href="https://twitter.com" target="_blank" class="social-icon twitter" title="Twitter">
-                    <i class="fa-brands fa-twitter"></i>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon twitter" aria-label="Twitter">
+                    <i class="fa-brands fa-twitter" aria-hidden="true"></i>
                 </a>
-                <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="#" class="social-icon pink-icon" title="Dribbble / Custom">
-                    <i class="fa-solid fa-dribbble"></i>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </footer>
 
+    <script src="./scripts/main.js" defer></script>
 </body>
 </html>

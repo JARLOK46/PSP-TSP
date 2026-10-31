@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --page-gutter: clamp(1rem, 4vw, 2rem);
+    --content-width: 980px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -16,9 +21,10 @@ body {
 }
 
  .container {
-    max-width: 980px;
+    width: 100%;
+    max-width: var(--content-width);
     margin: 0 auto;
-    padding: 0 20px;
+    padding-inline: var(--page-gutter);
 }
 
 .hero-section {
@@ -38,17 +44,22 @@ body {
 }
 
 .logo {
-    font-family: 'Pacifico', cursive; 
-    font-style: normal;              
-    font-weight: normal;            
+    color: inherit;
+    text-decoration: none;
+    font-family: 'Pacifico', cursive;
+    font-style: normal;
+    font-weight: normal;
     font-size: 32px;
-    color: #ffffff;
 }
 
 .nav-links {
-    margin-left: auto; 
+    margin-left: auto;
     display: flex;
-    gap: 6px; 
+    gap: 6px;
+}
+
+.menu-toggle {
+    display: none;
 }
 
 .nav-links a {
@@ -359,8 +370,9 @@ body {
 .project-card img {
     width: 100%;
     height: 130px;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
+    background-color: #f5f7f8;
 }
 
 .info-section {
@@ -401,7 +413,8 @@ body {
 .blog-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: #f5f7f8;
 }
 
 .blog-content h3 {
@@ -510,9 +523,9 @@ img {
 
 @media (max-width: 1279px) {
 .container {
- width: 100%;
-max-width: 100%;
- }
+    width: 100%;
+    max-width: var(--content-width);
+}
 
 .nav-container {
     width: 100%;
@@ -562,4 +575,259 @@ max-width: 100%;
     margin: 0 auto;
     object-fit: contain;
 }
- }
+}
+
+@media (max-width: 767px) {
+    .nav-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        min-width: 0;
+        font-size: clamp(1.75rem, 8vw, 2rem);
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 8px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 8px;
+        background: #3b464f;
+        color: #ffffff;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        grid-column: 1 / -1;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        margin-left: 0;
+        gap: 4px;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 12px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        padding-bottom: 24px;
+    }
+
+    .hero-text {
+        order: 1;
+        min-width: 0;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.9rem, 8vw, 2.25rem);
+        margin-bottom: 8px;
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+        margin-bottom: 16px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .btn-primary {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .link-secondary {
+        font-size: 12px;
+    }
+
+    .hero-image {
+        order: 2;
+        flex: 0 1 auto;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-image img {
+        width: min(100%, 160px);
+        max-height: 180px;
+        object-fit: contain;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .project-card {
+        min-width: 0;
+        padding: 4px;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+    }
+
+    .levels-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .level-card {
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .level-card p,
+    .pc-text {
+        font-size: 14px;
+    }
+
+    .pc-box {
+        padding: 22px 18px;
+    }
+
+    .pc-text {
+        padding: 0;
+    }
+
+    .info-grid {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .blog-col,
+    .twitter-col {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .blog-content {
+        min-width: 0;
+    }
+
+    .blog-content p,
+    .tweet {
+        font-size: 14px;
+    }
+
+    .read-more,
+    .older-entries,
+    .twitter-follow {
+        font-size: 13px;
+    }
+
+    .post-date,
+    .tweet-date {
+        font-size: 12px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .feature-card {
+        min-width: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .levels-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .level-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: min(100%, calc((100% - 20px) / 2));
+    }
+
+    .level-card {
+        min-width: 0;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .feature-card {
+        min-width: 0;
+    }
+}
+
+.skip-link {
+    position: fixed;
+    z-index: 1000;
+    top: 12px;
+    left: 12px;
+    padding: 10px 14px;
+    transform: translateY(-160%);
+    border-radius: 6px;
+    background: #ffffff;
+    color: #17354a;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #ffd166;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
