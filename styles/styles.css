@@ -675,6 +675,30 @@ img {
         object-fit: contain;
     }
 
+    .levels-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .level-card {
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .level-card p,
+    .pc-text {
+        font-size: 14px;
+    }
+
+    .pc-box {
+        padding: 22px 18px;
+    }
+
+    .pc-text {
+        padding: 0;
+    }
+
     .features-grid {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
@@ -687,6 +711,22 @@ img {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+    .levels-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .level-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: min(100%, calc((100% - 20px) / 2));
+    }
+
+    .level-card {
+        min-width: 0;
+    }
+
     .features-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
