@@ -370,8 +370,9 @@ body {
 .project-card img {
     width: 100%;
     height: 130px;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
+    background-color: #f5f7f8;
 }
 
 .info-section {
@@ -412,7 +413,8 @@ body {
 .blog-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: #f5f7f8;
 }
 
 .blog-content h3 {
@@ -689,7 +691,7 @@ img {
         width: 100%;
         height: auto;
         aspect-ratio: 4 / 3;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     .levels-container {
