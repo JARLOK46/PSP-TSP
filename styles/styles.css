@@ -620,4 +620,58 @@ img {
     .nav-links a {
         padding: 10px 12px;
     }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        padding-bottom: 24px;
+    }
+
+    .hero-text {
+        order: 1;
+        min-width: 0;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.9rem, 8vw, 2.25rem);
+        margin-bottom: 8px;
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+        margin-bottom: 16px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .btn-primary {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .link-secondary {
+        font-size: 12px;
+    }
+
+    .hero-image {
+        order: 2;
+        flex: 0 1 auto;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-image img {
+        width: min(100%, 160px);
+        max-height: 180px;
+        object-fit: contain;
+    }
 }
